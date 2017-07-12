@@ -9,10 +9,18 @@
     }
     function PhonegapLoaded(){
       document.getElementById("submitButton").addEventListener("click", dispMessage);
+      console.warn("This is a warning message!");
+      console.log("This is a log message!");
     }
     function dispMessage(){
       var nameOfUser = document.getElementById("name").value;
       document.getElementById("welcomemsg").innerHTML = "Welcome "+nameOfUser + " !";
+        
+      try {
+          var nameOfUser = document.getElementById("nme").value;
+      } catch (e) {
+          console.error("Error occurred : " + e.message);
+      }  
     }
   </script>
 </head>
